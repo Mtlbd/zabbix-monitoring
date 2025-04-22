@@ -28,7 +28,7 @@ apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-sq
 Make sure your database server is running. Then run the following on your **database host**:
 
 ```bash
-mysql -u root -p
+mysql -uroot -p
 ```
 
 Inside MySQL:
@@ -78,7 +78,30 @@ DBPassword=password
 
 ---
 
+## 🔄 5. Start Zabbix Services
 
+Start and enable Zabbix server, agent, and Apache:
+
+```bash
+systemctl restart zabbix-server zabbix-agent apache2
+systemctl enable zabbix-server zabbix-agent apache2
+```
+
+---
+
+## 🌐 6. Access Zabbix Web Interface
+
+Open your browser and go to:
+
+```
+http://<your-server-ip>/zabbix
+```
+
+---
+
+## ✅ Done!
+
+Zabbix is now ready for configuration via the web UI. Enjoy monitoring! 🎉
 
 ---
 
